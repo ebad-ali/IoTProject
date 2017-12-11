@@ -184,11 +184,11 @@ public class EmergencyService extends Service {
                 // if application is closed then push the notification to the user
                 if (!applicationChecker()) {
 
-                   // notificationSender(text);
-                    notificationSender("Fire Alarm");
+                    notificationSender(text);
+                    // notificationSender("Fire Alarm");
                 }
 
-                // if application is opened notify blinkactivity about something is recieved
+                // if application is opened notify blinkActivity about something is received
                 else {
                     BlinkLogoActivity.blinkLogoServiceReciever(text);
                 }
@@ -200,40 +200,46 @@ public class EmergencyService extends Service {
 
         int smallIconfile = 0, largeIconfile = 0;
         String title = "", content = "";
-/*
-        if (emergenceValue.equals("cigarrate smoke")) {
-            smallIconfile = R.drawable.ciga;
-            largeIconfile = R.drawable.ciga;
-            title = "Smoke Emergency!";
-          content = "Tap to Send Response";
-  */
+
+        // TODO Change value here
+        // Change value here
+        if (emergenceValue.equals("cigarrate smoke") || emergenceValue.equals("Fire Alarm") || emergenceValue.equals("Something must be cooking")) {
 
 
-       if (emergenceValue.equals("Fire Alarm")) {
-            smallIconfile = R.drawable.firea;
-            largeIconfile = R.drawable.firea;
-            title = "Fire Emergency!";
-            content = "Tap to send response";
+            // TODO change value here of Ciggarrate smoke
+            // For Ciggarette Smoke
+            if (emergenceValue.equals("cigarrate smoke")) {
+                smallIconfile = R.drawable.ciga;
+                largeIconfile = R.drawable.ciga;
+                title = "Smoke Emergency!";
+                content = "Tap to Send Response";
+            }
 
-  /*
-        }
-        else if (emergenceValue.equals("Something must be cooking")) {
-            smallIconfile = R.drawable.steamsa;
-            largeIconfile = R.drawable.steamsa;
-            title = "Steam Emergency!";
-            content = "Tap to send response";
-        }
-*/
+            // TODO change value here of Fire alarm
+            // For Fire Emergency
+            else if (emergenceValue.equals("Fire Alarm")) {
+                smallIconfile = R.drawable.firea;
+                largeIconfile = R.drawable.firea;
+                title = "Fire Emergency!";
+                content = "Tap to send response";
+            }
+
+            // TODO change value here of Kitchen Smoke
+            // For Kitchen Smoke
+            else if (emergenceValue.equals("Something must be cooking")) {
+                smallIconfile = R.drawable.steamsa;
+                largeIconfile = R.drawable.steamsa;
+                title = "Steam Emergency!";
+                content = "Tap to send response";
+            }
+
 
             NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
 
             builder.setSmallIcon(smallIconfile);
 
-
             Intent resultIntent = new Intent(this, BlinkLogoActivity.class);
-
             resultIntent.putExtra("emergencyValue", emergenceValue);
-
             resultIntent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
             TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
@@ -254,36 +260,42 @@ public class EmergencyService extends Service {
             builder.setContentText(content);
 
 
-            AudioManager audio = (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);
+            /*
+            *  Create notification with sound IF received value is Fire Alarm
+            *  and change the mode of the mobile and and set the sound to Fire sound
+            * */
+            if(emergenceValue.equals("Fire Alarm"))
+            {
+                AudioManager audio = (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);
 
-            // For Normal mode
-            int currentVolume = audio.getStreamVolume(AudioManager.STREAM_MUSIC);
-            int maxVolume = audio.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
+                // For Normal mode
+                int currentVolume = audio.getStreamVolume(AudioManager.STREAM_MUSIC);
+                int maxVolume = audio.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
 
-            float percent = 2.0f;
-            int seventyVolume = (int) (maxVolume * percent);
-            audio.setStreamVolume(AudioManager.STREAM_MUSIC, seventyVolume, 0);
-            audio.setRingerMode(AudioManager.RINGER_MODE_NORMAL);
-            audio.setStreamVolume(AudioManager.STREAM_MUSIC, audio.getStreamMaxVolume(AudioManager.STREAM_MUSIC), 0);
+                float percent = 2.0f;
+                int seventyVolume = (int) (maxVolume * percent);
+                audio.setStreamVolume(AudioManager.STREAM_MUSIC, seventyVolume, 0);
+                audio.setRingerMode(AudioManager.RINGER_MODE_NORMAL);
+                audio.setStreamVolume(AudioManager.STREAM_MUSIC, audio.getStreamMaxVolume(AudioManager.STREAM_MUSIC), 0);
 
+                Uri sound = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.smokealarm);
+                builder.setSound(sound);
 
-            // builder.setVibrate(new long[] { 1000, 1000, 1000, 1000, 1000 });
+            }
+
 
             builder.setVibrate(new long[]{1000, 3000, 1000, 3000, 1000});
 
-
             builder.setLights(Color.RED, 1000, 500);
-
-            //Uri alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-
-            Uri sound = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.smokealarm);
-            builder.setSound(sound);
 
             NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 
             // Will display the notification in the notification bar
-            notificationManager.notify(1, builder.build());
+            if (notificationManager != null) {
+                notificationManager.notify(1, builder.build());
+            }
         }
+
     }
 
     public boolean isOnline() {
