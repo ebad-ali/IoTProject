@@ -41,6 +41,7 @@ public class EmergencyService extends Service {
 
     String text;
 
+    // Right now it check after every 10 seconds
     public static final int notify = 1000 * 10;  //interval between two services(Here Service run every 10 seconds
     // change 10 to 5 for checking service every 5 seconds or 1 to
     // check every 1 second )
@@ -178,7 +179,8 @@ public class EmergencyService extends Service {
 */
 
                 Log.e("Service recalling", "Nothing Found");
-            } else {
+            }
+            else if (text.equalsIgnoreCase("Only Smoke") || text.equalsIgnoreCase("Fire Alarm") || text.equalsIgnoreCase("Kitchen Smoke")) {
                 Log.e("Service recalling", "Emergency Found");
 
                 // if application is closed then push the notification to the user
@@ -198,37 +200,35 @@ public class EmergencyService extends Service {
 
     void notificationSender(String emergenceValue) {
 
-        int smallIconfile = 0, largeIconfile = 0;
+        int smallIconFile = 0, largeIconFile = 0;
         String title = "", content = "";
 
-        // TODO Change value here
         // Change value here
-        if (emergenceValue.equals("cigarrate smoke") || emergenceValue.equals("Fire Alarm") || emergenceValue.equals("Something must be cooking")) {
+        if (emergenceValue.equals("Only Smoke") || emergenceValue.equals("Fire Alarm") || emergenceValue.equals("Kitchen Smoke")) {
 
 
-            // TODO change value here of Ciggarrate smoke
             // For Ciggarette Smoke
-            if (emergenceValue.equals("cigarrate smoke")) {
-                smallIconfile = R.drawable.ciga;
-                largeIconfile = R.drawable.ciga;
+            if (emergenceValue.equals("Only Smoke")) {
+                smallIconFile = R.drawable.ciga;
+                largeIconFile = R.drawable.ciga;
                 title = "Smoke Emergency!";
                 content = "Tap to Send Response";
             }
 
-            // TODO change value here of Fire alarm
+
             // For Fire Emergency
             else if (emergenceValue.equals("Fire Alarm")) {
-                smallIconfile = R.drawable.firea;
-                largeIconfile = R.drawable.firea;
+                smallIconFile = R.drawable.firea;
+                largeIconFile = R.drawable.firea;
                 title = "Fire Emergency!";
                 content = "Tap to send response";
             }
 
-            // TODO change value here of Kitchen Smoke
-            // For Kitchen Smoke
-            else if (emergenceValue.equals("Something must be cooking")) {
-                smallIconfile = R.drawable.steamsa;
-                largeIconfile = R.drawable.steamsa;
+
+             // For Kitchen Smoke
+            else if (emergenceValue.equals("Kitchen Smoke")) {
+                smallIconFile = R.drawable.steamsa;
+                largeIconFile = R.drawable.steamsa;
                 title = "Steam Emergency!";
                 content = "Tap to send response";
             }
@@ -236,7 +236,7 @@ public class EmergencyService extends Service {
 
             NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
 
-            builder.setSmallIcon(smallIconfile);
+            builder.setSmallIcon(smallIconFile);
 
             Intent resultIntent = new Intent(this, BlinkLogoActivity.class);
             resultIntent.putExtra("emergencyValue", emergenceValue);
@@ -254,7 +254,7 @@ public class EmergencyService extends Service {
 
             builder.setAutoCancel(true);
 
-            builder.setLargeIcon(BitmapFactory.decodeResource(getResources(), largeIconfile));
+            builder.setLargeIcon(BitmapFactory.decodeResource(getResources(), largeIconFile));
 
             builder.setContentTitle(title);
             builder.setContentText(content);
@@ -264,9 +264,8 @@ public class EmergencyService extends Service {
             *  Create notification with sound IF received value is Fire Alarm
             *  and change the mode of the mobile and and set the sound to Fire sound
             * */
-            // TODO change value here of Fire alarm here
-            if(emergenceValue.equals("Fire Alarm"))
-            {
+            if (emergenceValue.equals("Fire Alarm")) {
+
                 AudioManager audio = (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);
 
                 // For Normal mode

@@ -146,13 +146,12 @@ public class BlinkLogoActivity extends AppCompatActivity {
 
     public static void blinkLogoServiceReciever(String emergencyCode) {
 
-        // TODO change value here of ciggarate smoke
-        if (emergencyCode.equals("cigarrate smoke")) {
+
+        if (emergencyCode.equals("Only Smoke")) {
             callAnimation(imageViewCigarette);
             cigaretteBool = true;
         }
 
-        // TODO change value here of Fire Alarm
         else if (emergencyCode.equals("Fire Alarm")) {
             callAnimation(imageViewFire);
 
@@ -166,8 +165,7 @@ public class BlinkLogoActivity extends AppCompatActivity {
 
         }
 
-        // TODO change value here of Kitchen smoke
-        else if (emergencyCode.equals("Something must be cooking")) {
+        else if (emergencyCode.equals("Kitchen Smoke")) {
             callAnimation(imageViewSteam);
             steamBool = true;
 
@@ -178,13 +176,11 @@ public class BlinkLogoActivity extends AppCompatActivity {
 
         intializeViews();
 
-        // TODO change value here of ciggarate smoke
-        if (emergencyCode.equals("cigarrate smoke")) {
+        if (emergencyCode.equals("Only Smoke")) {
             callAnimation(imageViewCigarette);
             cigaretteBool = true;
         }
 
-        // TODO change value here of Fire Alarm
         else if (emergencyCode.equals("Fire Alarm")) {
             callAnimation(imageViewFire);
 
@@ -198,8 +194,7 @@ public class BlinkLogoActivity extends AppCompatActivity {
             }, 7000);
         }
 
-        // TODO change value here of Kitchen smoke
-        else if (emergencyCode.equals("Something must be cooking")) {
+        else if (emergencyCode.equals("Kitchen Smoke")) {
             callAnimation(imageViewSteam);
             steamBool = true;
         }
