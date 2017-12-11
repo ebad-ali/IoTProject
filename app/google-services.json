@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "399178176436",
+    "firebase_url": "https://emergency-alert-system-a21ef.firebaseio.com",
+    "project_id": "emergency-alert-system-a21ef",
+    "storage_bucket": "emergency-alert-system-a21ef.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:399178176436:android:0bacbddb92d02f40",
+        "android_client_info": {
+          "package_name": "com.example.ebadali.iotproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "399178176436-js2ph26t32v36sgr54dvfl7u03kdhg7q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ebadali.iotproject",
+            "certificate_hash": "baa1cf669b515b642229d2bc954624fd92f36344"
+          }
+        },
+        {
+          "client_id": "399178176436-pbstdk5fk5em1cg6vggc96dtdajc59n3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUVokkptnaEmFm3j8nb8uXl-LkBmW1-fk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "399178176436-pbstdk5fk5em1cg6vggc96dtdajc59n3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

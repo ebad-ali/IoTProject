@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Emergency Alert System</string>
+    <string name="progress_dialog">Connecting to Raspberry Pi</string>
+    <string name="wait">Please wait...</string>
+    <string name="login">Authenticating...</string>
+
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+    <string name="rationale_camera">This app needs access to your camera so you can take pictures.</string>
+    <string name="rationale_location_contacts">This app needs access to your location to know where you are.</string>
+
+    <string name="error_weak_password">Weak password</string>
+    <string name="error_invalid_email">Invalid email</string>
+    <string name="error_email_exist">Email already exist</string>
+    <string name="error_username_shorter">Please use between 6 and 30 characters</string>
+
+</resources>
