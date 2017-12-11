@@ -264,6 +264,7 @@ public class EmergencyService extends Service {
             *  Create notification with sound IF received value is Fire Alarm
             *  and change the mode of the mobile and and set the sound to Fire sound
             * */
+            // TODO change value here of Fire alarm here
             if(emergenceValue.equals("Fire Alarm"))
             {
                 AudioManager audio = (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);
