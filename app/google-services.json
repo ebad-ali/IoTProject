@@ -1,35 +1,35 @@
 {
   "project_info": {
-    "project_number": "399178176436",
-    "firebase_url": "https://emergency-alert-system-a21ef.firebaseio.com",
-    "project_id": "emergency-alert-system-a21ef",
-    "storage_bucket": "emergency-alert-system-a21ef.appspot.com"
+    "project_number": "794153996954",
+    "firebase_url": "https://iotproject-bc905.firebaseio.com",
+    "project_id": "iotproject-bc905",
+    "storage_bucket": "iotproject-bc905.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:399178176436:android:0bacbddb92d02f40",
+        "mobilesdk_app_id": "1:794153996954:android:0240d62be49e1d99",
         "android_client_info": {
-          "package_name": "com.example.ebadali.iotproject"
+          "package_name": "com.innovate.project.iotproject"
         }
       },
       "oauth_client": [
         {
-          "client_id": "399178176436-js2ph26t32v36sgr54dvfl7u03kdhg7q.apps.googleusercontent.com",
+          "client_id": "794153996954-3vte658em39o5ddjek86cp4bmkv6tb1q.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.ebadali.iotproject",
+            "package_name": "com.innovate.project.iotproject",
             "certificate_hash": "baa1cf669b515b642229d2bc954624fd92f36344"
           }
         },
         {
-          "client_id": "399178176436-pbstdk5fk5em1cg6vggc96dtdajc59n3.apps.googleusercontent.com",
+          "client_id": "794153996954-b1sffnt1djmo74g6mvgr7guom9v5cu42.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCUVokkptnaEmFm3j8nb8uXl-LkBmW1-fk"
+          "current_key": "AIzaSyBvXHHaC1gLRWQ51DTM3zYwoeRdZ8wrdCo"
         }
       ],
       "services": {
@@ -40,7 +40,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "399178176436-pbstdk5fk5em1cg6vggc96dtdajc59n3.apps.googleusercontent.com",
+              "client_id": "794153996954-b1sffnt1djmo74g6mvgr7guom9v5cu42.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

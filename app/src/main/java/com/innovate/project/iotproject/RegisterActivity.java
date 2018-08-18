@@ -1,5 +1,4 @@
-package com.example.ebadali.iotproject;
-
+package com.innovate.project.iotproject;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -189,7 +188,6 @@ public class RegisterActivity extends AppCompatActivity {
         Snackbar snackbar = Snackbar
                 .make(findViewById(android.R.id.content), "No internet connection.", Snackbar.LENGTH_LONG);
 
-
         View view = snackbar.getView();
         TextView tv = (TextView) view.findViewById(android.support.design.R.id.snackbar_text);
         tv.setTextColor(Color.WHITE);
@@ -197,7 +195,4 @@ public class RegisterActivity extends AppCompatActivity {
         snackbar.show();
 
     }
-
-
-
 }

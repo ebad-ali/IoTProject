@@ -1,5 +1,4 @@
-package com.example.ebadali.iotproject;
-
+package com.innovate.project.iotproject;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -147,7 +146,8 @@ public class SplashActivity extends AppCompatActivity {
 
         if (isOnline()) {
             callBlinkLogoActivity();
-        } else {
+        }
+        else {
             callDialog();
         }
     }

@@ -1,5 +1,4 @@
-package com.example.ebadali.iotproject;
-
+package com.innovate.project.iotproject;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.Context;
@@ -41,6 +40,9 @@ public class BlinkLogoActivity extends AppCompatActivity {
     static boolean  cigaretteBool = false, steamBool = false;
 
 
+    /*
+    * This activity is for Blink Screen of the application
+    * */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -172,6 +174,9 @@ public class BlinkLogoActivity extends AppCompatActivity {
         }
     }
 
+    /*
+    * To blink the logos when values are received from the service
+    * */
     public void blinkLogoServiceRecievere(String emergencyCode) {
 
         intializeViews();
@@ -201,6 +206,9 @@ public class BlinkLogoActivity extends AppCompatActivity {
     }
 
 
+    /*
+    *  Called when user click on notification
+    * */
     @Override
     public void onNewIntent(Intent intent) {
         Log.e("onNewIntent", "Im here");
@@ -218,6 +226,9 @@ public class BlinkLogoActivity extends AppCompatActivity {
         }
     }
 
+    /*
+    * Animation of the logo is done here
+    * */
     static void callAnimation(View view) {
         Log.e("Fucking imageViewFire", "" + "not null");
 

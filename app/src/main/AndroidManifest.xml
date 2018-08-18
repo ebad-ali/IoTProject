@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.ebadali.iotproject">
+    package="com.innovate.project.iotproject">
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -36,15 +36,15 @@
 
         <activity
             android:name=".LoginActivity"
-            android:screenOrientation="portrait"
             android:parentActivityName=".GetStartedActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
 
 
         <activity
             android:name=".RegisterActivity"
-            android:screenOrientation="portrait"
             android:parentActivityName=".GetStartedActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
 
 
@@ -60,8 +60,6 @@
             android:theme="@style/AppTheme" />
 
 
-
-
         <receiver android:name=".ServiceAutoStarter">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
@@ -75,5 +73,6 @@
 
 
     </application>
+
 
 </manifest>

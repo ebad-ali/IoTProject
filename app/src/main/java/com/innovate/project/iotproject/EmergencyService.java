@@ -1,5 +1,4 @@
-package com.example.ebadali.iotproject;
-
+package com.innovate.project.iotproject;
 import android.app.ActivityManager;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -34,6 +33,9 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 
+/*
+* This service is used to check after every second if any emergency is found.
+* */
 public class EmergencyService extends Service {
 
     String url = "http://virtualeye.io/iot/?action=show";
@@ -70,6 +72,7 @@ public class EmergencyService extends Service {
     }
 
 
+    // To get the value from the url
     void jsonRequest() {
 
         StringRequest request = new StringRequest(url, new Response.Listener<String>() {
@@ -144,6 +147,7 @@ public class EmergencyService extends Service {
         }, 9000);
     }
 
+    //  To check if application is currently running or closed.
     boolean applicationChecker() {
         ActivityManager activityManager = (ActivityManager) this.getSystemService(Context.ACTIVITY_SERVICE);
         List<ActivityManager.RunningTaskInfo> services = activityManager
@@ -164,6 +168,8 @@ public class EmergencyService extends Service {
         }
     }
 
+
+    // To check if emergency exist of not
     void checkerFunction() {
         if (text != null) {
 
@@ -198,6 +204,7 @@ public class EmergencyService extends Service {
         }
     }
 
+    // To generate notification
     void notificationSender(String emergenceValue) {
 
         int smallIconFile = 0, largeIconFile = 0;

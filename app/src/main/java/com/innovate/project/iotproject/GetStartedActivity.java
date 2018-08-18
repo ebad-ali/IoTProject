@@ -1,5 +1,4 @@
-package com.example.ebadali.iotproject;
-
+package com.innovate.project.iotproject;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;

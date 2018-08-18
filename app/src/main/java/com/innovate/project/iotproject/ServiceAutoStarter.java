@@ -1,5 +1,4 @@
-package com.example.ebadali.iotproject;
-
+package com.innovate.project.iotproject;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
